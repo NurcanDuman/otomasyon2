@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="otomasyonModelStoreContainer" CdmEntityContainer="otomasyonEntities">
+    <EntitySetMapping Name="ilceler">
+      <EntityTypeMapping TypeName="otomasyonModel.ilceler">
+        <MappingFragment StoreEntitySet="ilceler">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ilce" ColumnName="ilce" />
+          <ScalarProperty Name="sehir" ColumnName="sehir" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="iller">
+      <EntityTypeMapping TypeName="otomasyonModel.iller">
+        <MappingFragment StoreEntitySet="iller">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="sehir" ColumnName="sehir" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="eskiMusteri">
+      <EntityTypeMapping TypeName="otomasyonModel.eskiMusteri">
+        <MappingFragment StoreEntitySet="eskiMusteri">
+          <ScalarProperty Name="ad" ColumnName="ad" />
+          <ScalarProperty Name="soyad" ColumnName="soyad" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EskiPersonel">
+      <EntityTypeMapping TypeName="otomasyonModel.EskiPersonel">
+        <MappingFragment StoreEntitySet="EskiPersonel">
+          <ScalarProperty Name="ad" ColumnName="ad" />
+          <ScalarProperty Name="soyad" ColumnName="soyad" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tel" ColumnName="tel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IsBasvurulari">
+      <EntityTypeMapping TypeName="otomasyonModel.IsBasvurulari">
+        <MappingFragment StoreEntitySet="IsBasvurulari">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ad" ColumnName="ad" />
+          <ScalarProperty Name="soyad" ColumnName="soyad" />
+          <ScalarProperty Name="tel" ColumnName="tel" />
+          <ScalarProperty Name="okul" ColumnName="okul" />
+          <ScalarProperty Name="brans" ColumnName="brans" />
+          <ScalarProperty Name="tc" ColumnName="tc" />
+          <ScalarProperty Name="basvuru" ColumnName="basvuru" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Musteri">
+      <EntityTypeMapping TypeName="otomasyonModel.Musteri">
+        <MappingFragment StoreEntitySet="Musteri">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="M_Ad" ColumnName="M_Ad" />
+          <ScalarProperty Name="M_Soyad" ColumnName="M_Soyad" />
+          <ScalarProperty Name="M_il" ColumnName="M_il" />
+          <ScalarProperty Name="M_ilce" ColumnName="M_ilce" />
+          <ScalarProperty Name="M_Tel" ColumnName="M_Tel" />
+          <ScalarProperty Name="M_Mail" ColumnName="M_Mail" />
+          <ScalarProperty Name="M_Adres" ColumnName="M_Adres" />
+          <ScalarProperty Name="M_Tarih" ColumnName="M_Tarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Urun">
+      <EntityTypeMapping TypeName="otomasyonModel.Urun">
+        <MappingFragment StoreEntitySet="Urun">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="U_Ad" ColumnName="U_Ad" />
+          <ScalarProperty Name="U_Fiyat" ColumnName="U_Fiyat" />
+          <ScalarProperty Name="U_UretimYeri" ColumnName="U_UretimYeri" />
+          <ScalarProperty Name="U_Stok" ColumnName="U_Stok" />
+          <ScalarProperty Name="U_Kategori" ColumnName="U_Kategori" />
+          <ScalarProperty Name="U_Foto" ColumnName="U_Foto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Yetkili">
+      <EntityTypeMapping TypeName="otomasyonModel.Yetkili">
+        <MappingFragment StoreEntitySet="Yetkili">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Y_Ad" ColumnName="Y_Ad" />
+          <ScalarProperty Name="Y_Soyad" ColumnName="Y_Soyad" />
+          <ScalarProperty Name="Y_TC" ColumnName="Y_TC" />
+          <ScalarProperty Name="Y_DTarih" ColumnName="Y_DTarih" />
+          <ScalarProperty Name="Y_Sifre" ColumnName="Y_Sifre" />
+          <ScalarProperty Name="Y_Tel" ColumnName="Y_Tel" />
+          <ScalarProperty Name="Y_Tarih" ColumnName="Y_Tarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

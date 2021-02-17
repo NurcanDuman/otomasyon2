@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="otomasyonModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ilceler">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="ilce" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="sehir" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="iller">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sehir" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="eskiMusteri">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tarih" Type="DateTime" Precision="0" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="EskiPersonel">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tarih" Type="DateTime" Precision="0" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="IsBasvurulari">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="okul" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="brans" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="basvuru" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Musteri">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="M_Ad" />
+      <PropertyRef Name="M_Soyad" />
+      <PropertyRef Name="M_il" />
+      <PropertyRef Name="M_ilce" />
+      <PropertyRef Name="M_Tel" />
+      <PropertyRef Name="M_Mail" />
+      <PropertyRef Name="M_Adres" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="M_Ad" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="M_Soyad" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="M_il" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="M_ilce" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="M_Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="M_Mail" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="M_Adres" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="M_Tarih" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Urun">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="U_Ad" />
+      <PropertyRef Name="U_Fiyat" />
+      <PropertyRef Name="U_UretimYeri" />
+      <PropertyRef Name="U_Stok" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="U_Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="U_Fiyat" Type="Int32" Nullable="false" />
+    <Property Name="U_UretimYeri" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="U_Stok" Type="Int32" Nullable="false" />
+    <Property Name="U_Kategori" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="U_Foto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Yetkili">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="Y_Ad" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Y_Ad" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Y_Soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Y_TC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Y_DTarih" Type="DateTime" Precision="0" />
+    <Property Name="Y_Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Y_Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Y_Tarih" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityContainer Name="otomasyonEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ilceler" EntityType="Self.ilceler" />
+    <EntitySet Name="iller" EntityType="Self.iller" />
+    <EntitySet Name="eskiMusteri" EntityType="Self.eskiMusteri" />
+    <EntitySet Name="EskiPersonel" EntityType="Self.EskiPersonel" />
+    <EntitySet Name="IsBasvurulari" EntityType="Self.IsBasvurulari" />
+    <EntitySet Name="Musteri" EntityType="Self.Musteri" />
+    <EntitySet Name="Urun" EntityType="Self.Urun" />
+    <EntitySet Name="Yetkili" EntityType="Self.Yetkili" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="otomasyonModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'otomasyon.dbo.eskiMusteri' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="eskiMusteri">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="ad" Type="nvarchar" MaxLength="50" />
+          <Property Name="soyad" Type="nvarchar" MaxLength="50" />
+          <Property Name="tarih" Type="date" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'otomasyon.dbo.EskiPersonel' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="EskiPersonel">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="ad" Type="nvarchar" MaxLength="50" />
+          <Property Name="soyad" Type="nvarchar" MaxLength="50" />
+          <Property Name="tarih" Type="date" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tel" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'otomasyon.dbo.IsBasvurulari' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="IsBasvurulari">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ad" Type="nvarchar" MaxLength="50" />
+          <Property Name="soyad" Type="nvarchar" MaxLength="50" />
+          <Property Name="tel" Type="nvarchar" MaxLength="50" />
+          <Property Name="okul" Type="nvarchar" MaxLength="50" />
+          <Property Name="brans" Type="nvarchar" MaxLength="50" />
+          <Property Name="tc" Type="nvarchar" MaxLength="50" />
+          <Property Name="basvuru" Type="date" />
+        </EntityType>
+        <EntityType Name="ilceler">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="ilce" Type="nvarchar" MaxLength="255" />
+          <Property Name="sehir" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="iller">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sehir" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'otomasyon.dbo.Musteri' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Musteri">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="M_Ad" />
+            <PropertyRef Name="M_Soyad" />
+            <PropertyRef Name="M_il" />
+            <PropertyRef Name="M_ilce" />
+            <PropertyRef Name="M_Tel" />
+            <PropertyRef Name="M_Mail" />
+            <PropertyRef Name="M_Adres" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="M_Ad" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="M_Soyad" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="M_il" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="M_ilce" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="M_Tel" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="M_Mail" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="M_Adres" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="M_Tarih" Type="date" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'otomasyon.dbo.Urun' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Urun">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="U_Ad" />
+            <PropertyRef Name="U_Fiyat" />
+            <PropertyRef Name="U_UretimYeri" />
+            <PropertyRef Name="U_Stok" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="U_Ad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="U_Fiyat" Type="int" Nullable="false" />
+          <Property Name="U_UretimYeri" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="U_Stok" Type="int" Nullable="false" />
+          <Property Name="U_Kategori" Type="nvarchar" MaxLength="100" />
+          <Property Name="U_Foto" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'otomasyon.dbo.Yetkili' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Yetkili">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="Y_Ad" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Y_Ad" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Y_Soyad" Type="nvarchar" MaxLength="50" />
+          <Property Name="Y_TC" Type="nvarchar" MaxLength="50" />
+          <Property Name="Y_DTarih" Type="date" />
+          <Property Name="Y_Sifre" Type="nvarchar" MaxLength="50" />
+          <Property Name="Y_Tel" Type="nvarchar" MaxLength="50" />
+          <Property Name="Y_Tarih" Type="date" />
+        </EntityType>
+        <EntityContainer Name="otomasyonModelStoreContainer">
+          <EntitySet Name="ilceler" EntityType="Self.ilceler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="iller" EntityType="Self.iller" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="eskiMusteri" EntityType="Self.eskiMusteri" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [eskiMusteri].[ad] AS [ad], 
+    [eskiMusteri].[soyad] AS [soyad], 
+    [eskiMusteri].[tarih] AS [tarih], 
+    [eskiMusteri].[id] AS [id]
+    FROM [dbo].[eskiMusteri] AS [eskiMusteri]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="EskiPersonel" EntityType="Self.EskiPersonel" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [EskiPersonel].[ad] AS [ad], 
+    [EskiPersonel].[soyad] AS [soyad], 
+    [EskiPersonel].[tarih] AS [tarih], 
+    [EskiPersonel].[id] AS [id], 
+    [EskiPersonel].[tel] AS [tel]
+    FROM [dbo].[EskiPersonel] AS [EskiPersonel]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="IsBasvurulari" EntityType="Self.IsBasvurulari" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [IsBasvurulari].[id] AS [id], 
+    [IsBasvurulari].[ad] AS [ad], 
+    [IsBasvurulari].[soyad] AS [soyad], 
+    [IsBasvurulari].[tel] AS [tel], 
+    [IsBasvurulari].[okul] AS [okul], 
+    [IsBasvurulari].[brans] AS [brans], 
+    [IsBasvurulari].[tc] AS [tc], 
+    [IsBasvurulari].[basvuru] AS [basvuru]
+    FROM [dbo].[IsBasvurulari] AS [IsBasvurulari]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Musteri" EntityType="Self.Musteri" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Musteri].[id] AS [id], 
+    [Musteri].[M_Ad] AS [M_Ad], 
+    [Musteri].[M_Soyad] AS [M_Soyad], 
+    [Musteri].[M_il] AS [M_il], 
+    [Musteri].[M_ilce] AS [M_ilce], 
+    [Musteri].[M_Tel] AS [M_Tel], 
+    [Musteri].[M_Mail] AS [M_Mail], 
+    [Musteri].[M_Adres] AS [M_Adres], 
+    [Musteri].[M_Tarih] AS [M_Tarih]
+    FROM [dbo].[Musteri] AS [Musteri]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Urun" EntityType="Self.Urun" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Urun].[id] AS [id], 
+    [Urun].[U_Ad] AS [U_Ad], 
+    [Urun].[U_Fiyat] AS [U_Fiyat], 
+    [Urun].[U_UretimYeri] AS [U_UretimYeri], 
+    [Urun].[U_Stok] AS [U_Stok], 
+    [Urun].[U_Kategori] AS [U_Kategori], 
+    [Urun].[U_Foto] AS [U_Foto]
+    FROM [dbo].[Urun] AS [Urun]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Yetkili" EntityType="Self.Yetkili" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Yetkili].[id] AS [id], 
+    [Yetkili].[Y_Ad] AS [Y_Ad], 
+    [Yetkili].[Y_Soyad] AS [Y_Soyad], 
+    [Yetkili].[Y_TC] AS [Y_TC], 
+    [Yetkili].[Y_DTarih] AS [Y_DTarih], 
+    [Yetkili].[Y_Sifre] AS [Y_Sifre], 
+    [Yetkili].[Y_Tel] AS [Y_Tel], 
+    [Yetkili].[Y_Tarih] AS [Y_Tarih]
+    FROM [dbo].[Yetkili] AS [Yetkili]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="otomasyonModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ilceler">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="ilce" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="sehir" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="iller">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sehir" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="eskiMusteri">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tarih" Type="DateTime" Precision="0" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="EskiPersonel">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tarih" Type="DateTime" Precision="0" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="IsBasvurulari">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="okul" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="brans" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="basvuru" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Musteri">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="M_Ad" />
+            <PropertyRef Name="M_Soyad" />
+            <PropertyRef Name="M_il" />
+            <PropertyRef Name="M_ilce" />
+            <PropertyRef Name="M_Tel" />
+            <PropertyRef Name="M_Mail" />
+            <PropertyRef Name="M_Adres" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="M_Ad" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="M_Soyad" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="M_il" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="M_ilce" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="M_Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="M_Mail" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="M_Adres" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="M_Tarih" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Urun">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="U_Ad" />
+            <PropertyRef Name="U_Fiyat" />
+            <PropertyRef Name="U_UretimYeri" />
+            <PropertyRef Name="U_Stok" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="U_Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="U_Fiyat" Type="Int32" Nullable="false" />
+          <Property Name="U_UretimYeri" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="U_Stok" Type="Int32" Nullable="false" />
+          <Property Name="U_Kategori" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="U_Foto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Yetkili">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="Y_Ad" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Y_Ad" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Y_Soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Y_TC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Y_DTarih" Type="DateTime" Precision="0" />
+          <Property Name="Y_Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Y_Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Y_Tarih" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityContainer Name="otomasyonEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ilceler" EntityType="Self.ilceler" />
+          <EntitySet Name="iller" EntityType="Self.iller" />
+          <EntitySet Name="eskiMusteri" EntityType="Self.eskiMusteri" />
+          <EntitySet Name="EskiPersonel" EntityType="Self.EskiPersonel" />
+          <EntitySet Name="IsBasvurulari" EntityType="Self.IsBasvurulari" />
+          <EntitySet Name="Musteri" EntityType="Self.Musteri" />
+          <EntitySet Name="Urun" EntityType="Self.Urun" />
+          <EntitySet Name="Yetkili" EntityType="Self.Yetkili" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="otomasyonModelStoreContainer" CdmEntityContainer="otomasyonEntities">
+          <EntitySetMapping Name="ilceler">
+            <EntityTypeMapping TypeName="otomasyonModel.ilceler">
+              <MappingFragment StoreEntitySet="ilceler">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ilce" ColumnName="ilce" />
+                <ScalarProperty Name="sehir" ColumnName="sehir" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="iller">
+            <EntityTypeMapping TypeName="otomasyonModel.iller">
+              <MappingFragment StoreEntitySet="iller">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="sehir" ColumnName="sehir" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="eskiMusteri">
+            <EntityTypeMapping TypeName="otomasyonModel.eskiMusteri">
+              <MappingFragment StoreEntitySet="eskiMusteri">
+                <ScalarProperty Name="ad" ColumnName="ad" />
+                <ScalarProperty Name="soyad" ColumnName="soyad" />
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EskiPersonel">
+            <EntityTypeMapping TypeName="otomasyonModel.EskiPersonel">
+              <MappingFragment StoreEntitySet="EskiPersonel">
+                <ScalarProperty Name="ad" ColumnName="ad" />
+                <ScalarProperty Name="soyad" ColumnName="soyad" />
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="tel" ColumnName="tel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IsBasvurulari">
+            <EntityTypeMapping TypeName="otomasyonModel.IsBasvurulari">
+              <MappingFragment StoreEntitySet="IsBasvurulari">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ad" ColumnName="ad" />
+                <ScalarProperty Name="soyad" ColumnName="soyad" />
+                <ScalarProperty Name="tel" ColumnName="tel" />
+                <ScalarProperty Name="okul" ColumnName="okul" />
+                <ScalarProperty Name="brans" ColumnName="brans" />
+                <ScalarProperty Name="tc" ColumnName="tc" />
+                <ScalarProperty Name="basvuru" ColumnName="basvuru" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Musteri">
+            <EntityTypeMapping TypeName="otomasyonModel.Musteri">
+              <MappingFragment StoreEntitySet="Musteri">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="M_Ad" ColumnName="M_Ad" />
+                <ScalarProperty Name="M_Soyad" ColumnName="M_Soyad" />
+                <ScalarProperty Name="M_il" ColumnName="M_il" />
+                <ScalarProperty Name="M_ilce" ColumnName="M_ilce" />
+                <ScalarProperty Name="M_Tel" ColumnName="M_Tel" />
+                <ScalarProperty Name="M_Mail" ColumnName="M_Mail" />
+                <ScalarProperty Name="M_Adres" ColumnName="M_Adres" />
+                <ScalarProperty Name="M_Tarih" ColumnName="M_Tarih" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Urun">
+            <EntityTypeMapping TypeName="otomasyonModel.Urun">
+              <MappingFragment StoreEntitySet="Urun">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="U_Ad" ColumnName="U_Ad" />
+                <ScalarProperty Name="U_Fiyat" ColumnName="U_Fiyat" />
+                <ScalarProperty Name="U_UretimYeri" ColumnName="U_UretimYeri" />
+                <ScalarProperty Name="U_Stok" ColumnName="U_Stok" />
+                <ScalarProperty Name="U_Kategori" ColumnName="U_Kategori" />
+                <ScalarProperty Name="U_Foto" ColumnName="U_Foto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Yetkili">
+            <EntityTypeMapping TypeName="otomasyonModel.Yetkili">
+              <MappingFragment StoreEntitySet="Yetkili">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Y_Ad" ColumnName="Y_Ad" />
+                <ScalarProperty Name="Y_Soyad" ColumnName="Y_Soyad" />
+                <ScalarProperty Name="Y_TC" ColumnName="Y_TC" />
+                <ScalarProperty Name="Y_DTarih" ColumnName="Y_DTarih" />
+                <ScalarProperty Name="Y_Sifre" ColumnName="Y_Sifre" />
+                <ScalarProperty Name="Y_Tel" ColumnName="Y_Tel" />
+                <ScalarProperty Name="Y_Tarih" ColumnName="Y_Tarih" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
